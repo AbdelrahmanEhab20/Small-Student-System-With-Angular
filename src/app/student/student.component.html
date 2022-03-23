@@ -1,0 +1,156 @@
+<h4> Student Form</h4>
+<div class="container">
+    <form [formGroup]="formCreation">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-2">
+            <div>
+                <div class="form-outline">
+                    <label class="form-label">First name</label>
+                    <input
+                        [class.is-invalid]="formCreation.controls['FirstName'].errors &&formCreation.controls['FirstName'].dirty"
+                        type="text" formControlName="FirstName" class="form-control" />
+                </div>
+                <div *ngIf="formCreation.controls['FirstName'].errors &&formCreation.controls['FirstName'].dirty">
+                    <div *ngIf="formCreation.controls['FirstName'].errors['required']" class="Invalid">Required
+                        FirstName</div>
+                    <div *ngIf="formCreation.controls['FirstName'].errors['minlength']" class="Invalid">MinLength is 3
+                    </div>
+                    <div *ngIf="formCreation.controls['FirstName'].errors['maxlength']" class="Invalid">MaxLength is 13
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div class="form-outline">
+                    <label class="form-label">Last name</label>
+                    <input type="text"
+                        [class.is-invalid]="formCreation.controls['LastName'].errors &&formCreation.controls['LastName'].dirty"
+                        formControlName="LastName" class="form-control" />
+                    <div *ngIf="formCreation.controls['LastName'].errors &&formCreation.controls['LastName'].dirty">
+                        <div *ngIf="formCreation.controls['LastName'].errors['required']" class="Invalid">Required
+                            LastName</div>
+                        <div *ngIf="formCreation.controls['LastName'].errors['minlength']" class="Invalid">MinLength is
+                            3
+                        </div>
+                        <div *ngIf="formCreation.controls['LastName'].errors['maxlength']" class="Invalid">MaxLength is
+                            13
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Age input -->
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example6">Age</label>
+            <input type="number" formControlName="Age" [class.is-invalid]="formCreation.controls['Age'].errors"
+                class="form-control" />
+            <div class="Invalid" *ngIf="formCreation.controls['Age'].errors">
+                Required Age
+            </div>
+        </div>
+
+        <!-- Email input -->
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example5">Email</label>
+            <input type="email" formControlName="Email" [class.is-invalid]="formCreation.controls['Email'].errors"
+                class="form-control" />
+            <div class="Invalid" *ngIf="formCreation.controls['Email'].errors">
+                Requred Email
+            </div>
+        </div>
+
+        <!-- Mobile input -->
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example6">Mobile</label>
+            <input type="number" formControlName="Mobile" [class.is-invalid]="formCreation.controls['Mobile'].errors"
+                class="form-control" />
+            <div class="Invalid" *ngIf="formCreation.controls['Mobile'].errors">
+                Required Mobile
+            </div>
+        </div>
+
+        <!-- Submit button ,,,,,,[routerLink]="'/students/index'" -->
+        <button [disabled]="formCreation.invalid" (click)="add()" class="btn btn-primary" type="button"
+            style="margin: auto;display:block;"> ADD Student</button>
+    </form>
+</div>
+
+<br><br>
+<!-- <div class="container border border-4 p-4" [formGroup]="formCreation">
+    <div class="input-group">
+        <span class="input-group-text p-3">First and last name</span>
+        <input formControlName="FirstName" type="text" aria-label="First name" class="form-control"
+            placeholder="First-Name" #Firstname>
+        <input formControlName="LastName" type="text" aria-label="Last name" class="form-control"
+            placeholder="Last-Name" #lastname>
+    </div>
+    <br>
+    <div class="Invalid">
+        Invalid FirstName
+    </div>
+    <br>
+    <div class="input-group" style="width: 450px;">
+        <span class="input-group-text p-3">Age</span>
+        <input formControlName="Age" type="text" aria-label="Age" class="form-control age" placeholder="Age" #age>
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text p-3">Mobile and Email</span>
+        <input formControlName="Mobile" type="text" aria-label="First name" class="form-control" placeholder="Mobile"
+            #mobile>
+        <input formControlName="Email" type="text" aria-label="Last name" class="form-control" placeholder="Email"
+            #email>
+    </div>
+    <br> -->
+<!-- <a style="text-decoration: none;"> -->
+<!-- <button [routerLink]="'/students/index'" [disabled]="formCreation.invalid" (click)="add()" class="btn btn-primary"
+        type="button" style="margin: auto;display:block;"> ADD Student</button> -->
+<!-- </a> -->
+
+
+<!-- <br>
+</div> -->
+
+
+
+<!-- <button type="button" (click)="getStudents()">
+    Get Student
+</button>
+<br><br> -->
+
+
+<!-- 
+
+<h1 style="text-align: center;" *ngIf="!isPageLoaded">Loading..... </h1>
+<h1 style="text-align: center;" *ngIf="isPageLoaded==true">Now , You Have {{coustStudenets()}} Students</h1>
+<br>
+
+<hr>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students; let idCount=index">
+            <th>{{idCount+1}}</th>
+            <th [class.red-color]="student.Age<=20" [class.blue-color]="student.Age>=20">{{student.FirstName +' '+
+                student.LastName}}</th>
+            <th><input type="number" [(ngModel)]="student.Age"></th>
+            <th><input type="text" [(ngModel)]="student.Mobile"></th>
+            <th><input type="text" [(ngModel)]="student.Email"></th>
+            <th><button type="button" (click)="update(idCount)">Update </button></th>
+            <th><button type="button" [disabled]="student.IsDeleting" (click)="delete(idCount)">Delete </button></th>
+        </tr>
+    </tbody>
+</table> -->

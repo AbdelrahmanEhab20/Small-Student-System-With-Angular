@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 style="font-size: 45px;">Details Of Student : <span style="font-size: 55px;"> {{student.Name}}</span></h1>
+    <table class=" table text-center">
+        <thead>
+            <tr class="styleTR">
+                <th scope="col">#Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rateing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{student.ID}}</th>
+                <th [class.red-color]="student.Age<=20" [class.blue-color]="student.Age>=20">{{student.Name}}</th>
+                <th><input type="number" [(ngModel)]="student.Age"></th>
+                <th><input type="text" [(ngModel)]="student.Mobile"></th>
+                <th><input type="text" [(ngModel)]="student.Email"></th>
+                <th>
+                    <app-rating [rate]="1"></app-rating>
+                </th>
+                <th>
+                    <button type="button" (click)="update(student.ID)">Update</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- {{student.FirstName}} -->

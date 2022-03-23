@@ -1,0 +1,33 @@
+input{
+    font-family:Lucida Console;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+}
+button{
+    margin: 20px;
+    font-family:Lucida Console;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align:center ;
+}
+h1{
+    font-family:Lucida Console;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align:center ;
+}
+h4{
+    border: rgb(7, 41, 7) 2px solid;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+}
+
+.red-color{
+    color: red;
+}
+.green-color{
+    color: green;
+}

@@ -1,0 +1,15 @@
+<div *ngIf="rate>0">
+    <span class="fa fa-star" *ngFor="let item of stars; let star=index" [class.checked]="rate>=star"
+        (click)="onChangeRate(star)"></span>
+</div>
+<div *ngIf="rate==0">
+    No Ratings
+</div>
+
+
+
+
+<!-- <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span> -->

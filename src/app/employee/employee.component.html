@@ -1,0 +1,18 @@
+<h4>Employee Component</h4>
+
+<h1>My first name is {{employee.firstName}}</h1>
+<br>
+<button type="button" (click)="setFirstName()">Change First Name</button>
+<h1>My last name is {{employee.lastName}}</h1>
+<input type="text" #inputLastName (keyup.enter)="setLastName(inputLastName.value)" value="{{employee.lastName}}">
+<br>
+<button type="button" (click)="setLastName(inputLastName.value)">Change Last Name</button>
+<br>
+<input type="text" [(ngModel)]="employee.lastName">
+<br>
+<input type="number" [(ngModel)]="employee.age">
+<h1>My full name is {{employee.firstName+' '+employee.lastName}}</h1>
+<h1>My full name is {{getFullName()}}</h1>
+<h1 [class.red-color]="employee.age>10" [class.green-color]="employee.age<10">My Age is {{employee.age}}</h1>
+<h1 class="red-color" [hidden]="employee.age>10">Sorry Your age should be Above 10</h1>
+<h1 class="green-color" *ngIf="employee.age<10">Sorry Your age ngif should be Above 10</h1>

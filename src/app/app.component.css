@@ -1,0 +1,13 @@
+h1 {
+  color: rgb(6, 12, 6);
+  text-align: center;
+  margin-top: 50px;
+  font-family: Lucida Console;
+  font-weight: 9000;
+  font-size: 50px;
+}
+input,
+button {
+  font-family: Lucida Console;
+  font-weight: bolder;
+}

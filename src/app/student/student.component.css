@@ -1,0 +1,46 @@
+input {
+  font-family: Lucida Console;
+  font-weight: bolder;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  border: rgb(7, 41, 7) 2px solid;
+}
+button {
+  margin: 10px;
+  font-family: Lucida Console;
+  font-weight: bolder;
+  font-size:20px;
+  text-align: center;
+  border: rgb(7, 41, 7) 2px solid;
+}
+h4 {
+  text-align: center;
+  text-decoration: underline;
+  /* border: rgb(7, 41, 7) 2px solid; */
+  font-size: 24px;
+}
+h1 {
+  font-family: Lucida Console;
+}
+.red-color {
+  color: red;
+}
+.blue-color {
+  color: blue;
+}
+.container {
+  padding: 8px;
+  width: 35%;
+  border: rgb(63, 59, 59) 5px solid;
+  font-weight: bold;
+}
+.input-group-text {
+  font-weight: bold;
+}
+.Invalid {
+  color: red;
+}
+label{
+  color: rgb(12, 19, 119);
+}

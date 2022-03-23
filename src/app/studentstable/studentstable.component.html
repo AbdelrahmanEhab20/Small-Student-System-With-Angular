@@ -1,0 +1,47 @@
+<h1 style="text-align: center;" *ngIf="!isPageLoaded">Loading..... </h1>
+<h1 style="text-align: center;" *ngIf="isPageLoaded==true">Now , You Have {{coustStudenets()}} Students</h1>
+<br>
+
+<hr>
+
+<div class="container">
+    <table class="table" style="text-align: center;">
+        <thead>
+            <tr class="TR_MAIN">
+                <th scope="col">#Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date</th>
+                <th scope="col">Rateing</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students; let idCount=index">
+                <th>{{idCount+1}}</th>
+                <th><a [class.red-color]="student.Age<=20" [class.blue-color]="student.Age>=20"
+                        routerLink="/details/{{student.ID}}">{{student.Name|uppercase|maxLength:10}}</a> </th>
+                <!-- <input> type="number" [(ngModel)]="student.Age" -->
+                <th>{{student.Age}}</th>
+                <th>{{student.Mobile}}</th>
+                <th>{{student.Email}}</th>
+                <!-- <th style="direction: rtl;">{{currentdate|date:'ar-EG'}} </th> -->
+                <th>{{student.CreatedDate | date:'short'}} </th>
+                <!-- student.CreatedDate  -->
+                <th>
+                    <app-rating [rate]="2"></app-rating>
+                </th>
+                <th>
+                    <button type="button" (click)=" update(idCount)">Update</button>
+                </th>
+                <!-- (click)="update(idCount)" -->
+                <th><button type="button" [disabled]="student.IsDeleting" (click)="delete(idCount)">Delete </button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br><br><br><br>

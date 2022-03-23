@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.min.css"; */
+body {
+  background: rgb(255, 252, 252);
+}
+hr {
+  border: 5px solid black;
+}

@@ -1,0 +1,12 @@
+h2{
+    font-family:Lucida Console;
+    font-weight: bolder;
+    font-size: 40px;
+    text-align: center;
+}
+h4{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+    border: rgb(7, 41, 7) 2px solid;
+}
